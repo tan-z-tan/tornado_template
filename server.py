@@ -3,14 +3,13 @@
 
 from optparse import OptionParser
 
-from tornado.options import define, options
-
 import tornado.ioloop
 import tornado.web
 import tornado.httpserver
 from api import ping_handler
 from api import echo_handler
 from api import echo_image_handler
+
 
 class ServerApp:
 
@@ -35,6 +34,7 @@ def main():
     print("LISTEN: %s" % options.port)
 
     tornado.ioloop.IOLoop.current().start()
+
 
 if __name__ == "__main__":
     main()

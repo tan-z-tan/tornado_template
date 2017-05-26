@@ -3,13 +3,14 @@ from PIL import Image
 import urllib.request
 import io
 
+
 class EchoImageHandler(tornado.web.RequestHandler):
 
     def get(self):
         path = self.get_argument("path", "")
 
         if path == "":
-          raise tornado.web.HTTPError(422)
+            raise tornado.web.HTTPError(422)
 
         with urllib.request.urlopen(path) as url:
             img = Image.open(url)
