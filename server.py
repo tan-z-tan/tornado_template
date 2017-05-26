@@ -10,14 +10,15 @@ import tornado.web
 import tornado.httpserver
 from api import ping_handler
 from api import echo_handler
-
+from api import echo_image_handler
 
 class ServerApp:
 
     def application(self):
         application = tornado.web.Application([
             (r"/echo", echo_handler.EchoHandler),
-            (r"/ping", ping_handler.PingHandler)
+            (r"/ping", ping_handler.PingHandler),
+            (r"/echo_image", echo_image_handler.EchoImageHandler),
         ])
         return application
 
