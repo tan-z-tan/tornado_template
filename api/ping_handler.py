@@ -3,7 +3,7 @@ import tornado.web
 class PingHandler(tornado.web.RequestHandler):
 
     def get(self):
-        self.write("ping")
+        self.write("pong")
 
     def post(self):
-        self.write("ping")
+        self.write("pong")
